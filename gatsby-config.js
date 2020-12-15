@@ -27,18 +27,19 @@ module.exports = {
     'gatsby-transformer-sharp',
     {
       resolve: `gatsby-plugin-mdx`,
-      options: {
-        extension: [`.md`, `.mdx`],
-        gatsbyRemarkPlugins: [
+      options: 
+      {
+        extensions: [ `.mdx`, `.md`],
+        gatsbyRemarkPlugins: 
+        [
           {
             resolve: `gatsby-remark-images`,
-            option: {
+            options: {
               maxWidth: 1200,
             }
-          }
-        ]
-        
-      }
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
@@ -50,6 +51,7 @@ module.exports = {
         display: 'swap',
       },
     },
+    `gatsby-plugin-styled-components`,
   ],
   
 }
