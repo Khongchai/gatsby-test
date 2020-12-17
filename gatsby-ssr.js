@@ -5,8 +5,19 @@ import Theme from "./src/themes/theme";
 const GlobalStyles = createGlobalStyle`
     *
     {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
+    }
+    #gatsby-focus-wrapper
+    {
+        width: 100%;
+        height: 100vh;
+    }
+    #__gatsby
+    {
+        width: 100%;
+        height: 100vh;
     }
 
     body, html

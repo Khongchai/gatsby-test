@@ -10,6 +10,18 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
     }
 
+    #gatsby-focus-wrapper
+    {
+        width: 100%;
+        height: 100vh;
+    }
+    #__gatsby
+    {
+        width: 100%;
+        height: 100vh;
+    }
+
+
     body, html
     {
         font-family: ${props => props.theme.fonts.main};
