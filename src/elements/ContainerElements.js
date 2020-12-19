@@ -17,8 +17,8 @@ export const ContainerWrapper = styled.div`
         Create four rows, with the fourth row taking up 
         the rest of the available space from the other three. 
     */
-    grid-template-rows: 7.8 rem 20 rem 5 rem auto;
-    grid: 0 2rem;
+    grid-template-rows: 7.8rem 20rem 5rem auto;
+    gap: 0 2rem;
 
     @media ${props => props.theme.breakpoints.tablet}
     {

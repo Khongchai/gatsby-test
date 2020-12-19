@@ -1,6 +1,14 @@
 import React from "react";
 import { ContainerWrapper } from "../elements";
+import {Nav, Footer} from "../components";
 
-//Whatever is wrapped around Container will be wrapped in a ContainerWrapper
-//question: why not just use ContainerWrapper directly?
-export const Container = ({children}) => <ContainerWrapper>{children}</ContainerWrapper>
+export const Container = ({children}) => 
+{
+    return (
+    <ContainerWrapper>
+        <Nav/>
+        {children}
+        <Footer/>
+    </ContainerWrapper>
+    );
+}
