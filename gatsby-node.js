@@ -42,17 +42,19 @@ exports.createPages = async function({actions, graphql})
   }
 
   //Create blog posts one by one.
-  /*
-  data.allMdx.edges.forEach(edge => {
+  //TODO single-post pages do not get loaded, maybe the function does not even run?
+  data.allMdx.edges.forEach(edge => 
+  {
     const slug = edge.node.frontmatter.slug;
+    console.log(slug)
     const id = edge.node.id;
-    actions.creatPages({
-      path:SVGFESpotLightElement,
-      component: requestAnimationFrame.resolve(`./src/templates/singlePost.js`),
+    actions.creatPage({
+      path:slug,
+      component: require.resolve(`./src/templates/singlePost.js`),
       context: {id},
     })
   });
-*/
+
 };
 
   

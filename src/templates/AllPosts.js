@@ -3,6 +3,8 @@ import {graphql} from "gatsby";
 import { Container, Content, ContentCard, FeatureImage, Pagination } from "../components";
 import {H1, P} from "../elements";
 
+//Note: The result of the query is automatically inserted into your React component on the data prop. 
+//GraphQL and Gatsby let you ask for data and then immediately start using it.
 const allPosts = ({pageContext, data}) =>
 {
     const {currentPage, numPages} = pageContext;
@@ -75,6 +77,7 @@ export const pageQuery = graphql`
 
 
 /*
+Old index.js
 import React from "react";
 import { Container, FeatureImage, Content, ContentCard } from "../components";
 
