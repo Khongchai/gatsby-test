@@ -6,3 +6,4 @@ export * from "./ContentElements";
 export * from "./TypographyElement";
 export * from "./CardElement";
 export * from "./ButtonElement";
+export * from "./PaginationElements";
