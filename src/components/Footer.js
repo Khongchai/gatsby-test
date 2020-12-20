@@ -1,5 +1,5 @@
 import React from "react";
-import {FooterWrapper, FooterSocialIcons, FooterSocialWrapper} from "../elements/FooterElements";
+import {FooterWrapper, FooterSocialIcons, FooterSocialWrapper, P} from "../elements";
 import {useStaticQuery, graphql} from "gatsby";
 
 export const Footer = () => 
@@ -41,7 +41,7 @@ export const Footer = () =>
                     <img src={data.twitter.publicURL} alt="Twitter Logo"/>
                 </a>
             </FooterSocialIcons>
-            <p>Copyright 2020 Company. All right reserved.</p>
+            <P size="xSmall" color="dark3">Copyright 2020 Company. All right reserved.</P>
         </FooterSocialWrapper>
     </FooterWrapper>
     )

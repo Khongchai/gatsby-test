@@ -27,6 +27,8 @@ const GlobalStyles = createGlobalStyle`
         background-color: ${props => PushSubscriptionOptions.theme.colors.light1};
     }
 `;
+
+//This theme provider lets all components access the theme via props.theme
 export const wrapRootElement = ({element}) => (
     <ThemeProvider theme={Theme}>
         <GlobalStyles/>
