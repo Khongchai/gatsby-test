@@ -9,8 +9,7 @@ import { Container, Post, FeatureImage } from "../components";
 //GraphQL and Gatsby let you ask for data and then immediately start using it.
 const SinglePost = ({data}) => 
 {
-    const featureImage = data.mdx.frontmatter.childImageSharp.fixed;
-
+    const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fixed;
     return(
         <Container>
             <FeatureImage fixed={featureImage} />
@@ -19,11 +18,12 @@ const SinglePost = ({data}) =>
                 <MDXRenderer>{data.mdx.body}</MDXRenderer>
             </Post>
         </Container>
-    )
+    );
 }
 
 export default SinglePost;
 
+//the id variable is injected into this file through gatsby-node
 export const pageQuery = graphql`
     query SinglePostQuery($id: String!)
     {
@@ -42,12 +42,7 @@ export const pageQuery = graphql`
                     {
                         fixed 
                         {
-                            base64
-                            tracedSVG
-                            aspectRatio
-                            srcWebp
-                            srcSetWebp
-                            originalName
+                            ...GatsbyImageSharpFixed
                         }
                     }
                 }

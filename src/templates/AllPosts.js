@@ -5,6 +5,8 @@ import {H1, P} from "../elements";
 
 //Note: The result of the query is automatically inserted into your React component on the data prop. 
 //GraphQL and Gatsby let you ask for data and then immediately start using it.
+
+//A context passed in gatsby-node can be read through the pageContext variable.
 const allPosts = ({pageContext, data}) =>
 {
     const {currentPage, numPages} = pageContext;
@@ -51,7 +53,7 @@ const allPosts = ({pageContext, data}) =>
 
 export default allPosts;
 
-
+//skip and limit variables are injected into this file through gatsby-node
 export const pageQuery = graphql`
     query AllPostsQuery($skip: Int!, $limit: Int!)
     {

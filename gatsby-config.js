@@ -1,5 +1,9 @@
 module.exports = {
   /* Your site config here */
+  siteMetadata:
+  {
+    title: "Gatsby-Simple-Blog",
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -25,6 +29,7 @@ module.exports = {
     //plugins for dealing with image optimization so that pages can be created dynamically.
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-mdx`,
       options: 

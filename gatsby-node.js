@@ -22,6 +22,19 @@ exports.createPages = async function({actions, graphql})
   //how many pages should we have
   const numPages = Math.ceil(data.allMdx.edges.length / postPerPage);
 
+  //Create posts for the individual page based on their slug.
+  data.allMdx.edges.forEach(edge => 
+  {
+    const slug = edge.node.frontmatter.slug;
+    const id = edge.node.id;
+    actions.createPage({
+      path: slug,
+      component: require.resolve(`./src/templates/SinglePost.js`),
+      context: {id},
+    })
+  });
+
+  //create posts for the main page
   for (let i = 0; i < numPages; i++)
   {
     actions.createPage
@@ -41,19 +54,7 @@ exports.createPages = async function({actions, graphql})
     });
   }
 
-  //Create blog posts one by one.
-  //TODO single-post pages do not get loaded, maybe the function does not even run?
-  data.allMdx.edges.forEach(edge => 
-  {
-    const slug = edge.node.frontmatter.slug;
-    console.log(slug)
-    const id = edge.node.id;
-    actions.creatPage({
-      path:slug,
-      component: require.resolve(`./src/templates/singlePost.js`),
-      context: {id},
-    })
-  });
+
 
 };
 

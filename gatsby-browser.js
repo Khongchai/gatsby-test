@@ -1,6 +1,11 @@
 import React from 'react';
 import {ThemeProvider, createGlobalStyle} from "styled-components";
+import {MDXProvider} from "@mdx-js/react";
+import {preToCodeBlock} from "mdx-utils";
 import Theme from "./src/themes/theme";
+import {Table, Code} from "./src/components";
+import "./language-tabs.css";
+
 
 const GlobalStyles = createGlobalStyle`
     *
@@ -29,9 +34,31 @@ const GlobalStyles = createGlobalStyle`
         background-color: ${props => props.theme.colors.light1};
     }
 `;
-export const wrapRootElement = ({element}) => (
-    <ThemeProvider theme={Theme}>
-        <GlobalStyles/>
-        {element}
-    </ThemeProvider>
-)
+
+//replace all HTML <table> elements with the <Table> component.
+const components = 
+{
+    table: Table,
+    //For code highlighting.
+    pre: preProps => {
+        const props = preToCodeBlock(preProps);
+        if (props)
+        {
+            return <Code {...props}/>
+        }
+        return <pre{...preProps}/>
+    },
+    wrapper: ({children}) => <>{children}</>,
+
+}
+
+export const wrapRootElement = ({element}) => 
+(
+    <MDXProvider components={components}>
+        <ThemeProvider theme={Theme}>
+            <GlobalStyles/>
+            {element}
+        </ThemeProvider>
+    </MDXProvider>
+
+);

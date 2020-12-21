@@ -17,6 +17,7 @@ export const FeatureImage = ({fixed}) =>
         }
     `);
     
+    //If there is a passed in "fixed" then load that, else load the fallback "banner1.jpg"
     return (
         <FeatureImageWrapper>
             
