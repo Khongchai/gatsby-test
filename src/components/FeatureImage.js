@@ -8,8 +8,9 @@ export const FeatureImage = ({fixed}) =>
      
     const data = useStaticQuery(graphql`
         query{
-            imageSharp(fixed: {originalName: {eq:"banner1.jpg"}}){
-                fixed
+            imageSharp(fixed: {originalName: {eq:"banner1.jpg"}})
+            {
+                fixed(quality: 100)
                 {
                     ...GatsbyImageSharpFixed_withWebp_tracedSVG
                 }

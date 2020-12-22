@@ -5,13 +5,13 @@ import {useStaticQuery, Link, graphql} from "gatsby";
 export const Nav = () => 
 {
     const data = useStaticQuery(graphql`
-    query
-    {
-        logo: file(relativePath: {eq: "randomicon.png"})
+        query
         {
-            publicURL
+            logo: file(relativePath: {eq: "randomicon.png"})
+            {
+                publicURL
+            }
         }
-    }
     `);
     return <NavWrapper>
             <Link to="/">

@@ -1,8 +1,12 @@
 module.exports = {
-  /* Your site config here */
   siteMetadata:
   {
     title: "Gatsby-Simple-Blog",
+    description: "A simple blog built with Gatsby and MDX",
+    url: "https://khongchai.io",
+    image: "./banner1.jpg",
+    twitterUsername: "@Khongchai",
+    author: "Khongchai",
   },
   plugins: [
     {
@@ -38,11 +42,7 @@ module.exports = {
         gatsbyRemarkPlugins: 
         [
           {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 3840,
-              quality: 100,
-            }
+            resolve: `gatsby-remark-images`
           },
         ],
       },

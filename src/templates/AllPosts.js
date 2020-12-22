@@ -1,6 +1,6 @@
 import React from "react";
 import {graphql} from "gatsby";
-import { Container, Content, ContentCard, FeatureImage, Pagination } from "../components";
+import { Container, Content, ContentCard, FeatureImage, Pagination, SEO} from "../components";
 import {H1, P} from "../elements";
 
 //Note: The result of the query is automatically inserted into your React component on the data prop. 
@@ -19,6 +19,7 @@ const allPosts = ({pageContext, data}) =>
     const posts = data.allMdx.edges;
     return(
         <Container>
+            <SEO/>
             <FeatureImage/>
             <Content>
                 <H1 textAlign="center" margin="0 0 1rem 0">
