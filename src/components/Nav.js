@@ -13,9 +13,11 @@ export const Nav = () =>
             }
         }
     `);
-    return <NavWrapper>
+    return (
+        <NavWrapper>
             <Link to="/">
                 <img src={data.logo.publicURL} alt="My Logo"/>
             </Link>
-         </NavWrapper>
+        </NavWrapper>
+         )
 }

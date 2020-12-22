@@ -10,7 +10,7 @@ export const FeatureImage = ({fixed}) =>
         query{
             imageSharp(fixed: {originalName: {eq:"banner1.jpg"}})
             {
-                fixed(quality: 100)
+                fixed(width: 3840, quality: 100)
                 {
                     ...GatsbyImageSharpFixed_withWebp_tracedSVG
                 }
